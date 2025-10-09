@@ -1,5 +1,6 @@
 # Despliega tu segunda aplicación con Docker (Snapdrop)
 APACHE AGRAGADO!!
+SERVICIO VS AGREGADO!!
 
 ### 1. Ejercicio: Despliega el proyecto de docker compose y responde a las siguientes preguntas.
 
