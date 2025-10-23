@@ -56,9 +56,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
-      - SETTINGS_ENCRYPTION_KEY=pon_algo_aquí
+      - SETTINGS_ENCRYPTION_KEY=${pon_algo_aquí}
       - CLI_ARGS= #optional
-      - DUPLICATI__WEBSERVICE_PASSWORD=micontraseña
+      - DUPLICATI__WEBSERVICE_PASSWORD=${microntraseña}
     volumes:
       - ./duplicati:/config
       - ./micarpetasegura:/soruce/micarpetasegura
