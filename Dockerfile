@@ -2,15 +2,11 @@ FROM alpine:3.20
 
 CMD ["tail", "-f", "/dev/null"]
 
-LABEL maintainer="curso@example.com"
+RUN apt update
 
-ENV LANG=C.UTF-8
+RUN apt install nano -y
 
-WORKDIR /app
-
-COPY ./src /app/src
-
-COPY ./config /app/config
+RUN apt install notepadqq -y
 
 RUN apk add --no-cache bash
 
