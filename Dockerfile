@@ -1,7 +1,5 @@
 FROM alpine:3.20
 
-CMD ["tail", "-f", "/dev/null"]
-
 RUN apt update
 
 RUN apt install nano -y
