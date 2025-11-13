@@ -67,6 +67,10 @@ services:
       - 8200:8200
     restart: unless-stopped
 
+  mi-servicio:
+    build:
+      context: ./mi-servicio
+
 
 
 volumes:
