@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   snapdrop:
     image: linuxserver/snapdrop:version-b8b78cc2
@@ -38,17 +40,16 @@ services:
     image: lscr.io/linuxserver/code-server:latest
     restart: always
     environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: Europe/Madrid
-      PASSWORD: ekaitz123
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - PASSWORD=ekaitz123
     volumes:
       - ./:/config/workspace
       - code_config:/config
     ports:
       - "8443:8443"
-  
-# Duplicati
+
   duplicati:
     image: lscr.io/linuxserver/duplicati:latest
     container_name: duplicati
@@ -56,23 +57,19 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
-      - SETTINGS_ENCRYPTION_KEY=${pon_algo_aquí}
-      - CLI_ARGS= #optional
-      - DUPLICATI__WEBSERVICE_PASSWORD=${microntraseña}
+      - SETTINGS_ENCRYPTION_KEY=123
+      - CLI_ARGS=
+      - DUPLICATI__WEBSERVICE_PASSWORD=123
     volumes:
       - ./duplicati:/config
-      - ./micarpetasegura:/soruce/micarpetasegura
-
+      - ./micarpetasegura:/source/micarpetasegura
     ports:
       - 8200:8200
     restart: unless-stopped
 
   mi-servicio:
     build:
-      context: ./mi-servicio
-
-
+      context: .
 
 volumes:
   code_config:
-  
